@@ -33,7 +33,7 @@ jobs:
           $version = if ($env:GITHUB_REF -like 'refs/tags/v*') { $env:GITHUB_REF_NAME } else { 'dev' }
           $exe = "nvtopps-log-disabler-$version.exe"
           Copy-Item build\nvtopps-log-disabler.exe build\$exe
-          Compress-Archive -Path build\$exe,README.md,LICENSE -DestinationPath build\nvtopps-log-disabler-$version.zip
+          Compress-Archive -Path build\$exe,README.md,README.de.md,LICENSE -DestinationPath build\nvtopps-log-disabler-$version.zip
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
